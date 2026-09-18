@@ -1,0 +1,13 @@
+{
+  "name": "whatsapp-ai-bot",
+  "version": "0.1.0",
+  "private": true,
+  "description": "WhatsApp AI auto-reply bot with command-based control",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
