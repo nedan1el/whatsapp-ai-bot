@@ -1,13 +1,43 @@
 # WhatsApp AI Bot
 
-WhatsApp auto-reply bot with command-based control.
+Готовая основа автоответчика для WhatsApp Business Cloud API с управлением командами прямо из WhatsApp.
 
-## Planned features
-- Automatic replies to incoming WhatsApp messages
-- Control bot behavior through WhatsApp commands
-- Configurable reply mode and rules
-- AI provider can be added later
-- Secrets kept outside source code
+## Возможности
 
-## Setup
-This repository contains the initial project skeleton. WhatsApp transport and AI credentials will be configured in later steps.
+- автоматические ответы на входящие текстовые сообщения;
+- управление с номера администратора;
+- включение и выключение автоответчика;
+- изменение инструкции ИИ без изменения кода;
+- команда статуса;
+- секреты хранятся только в переменных окружения.
+
+## Команды администратора
+
+`/help` — список команд  
+`/on` — включить автоответчик  
+`/off` — выключить автоответчик  
+`/status` — показать статус  
+`/prompt ТЕКСТ` — изменить инструкцию боту  
+`/reset` — вернуть стандартную инструкцию
+
+## Переменные окружения
+
+Заполнить значения из `.env.example` на сервере/хостинге:
+
+- `VERIFY_TOKEN`
+- `WHATSAPP_TOKEN`
+- `PHONE_NUMBER_ID`
+- `OPENAI_API_KEY`
+- `ADMIN_PHONE`
+- `MODEL`
+- `SYSTEM_PROMPT`
+
+## Webhook
+
+После публикации приложения URL webhook будет:
+
+`https://ВАШ-ДОМЕН/webhook`
+
+В Meta WhatsApp webhook settings нужно указать этот URL и тот же `VERIFY_TOKEN`.
+
+Важно: токены и API-ключи не загружаем в GitHub.
